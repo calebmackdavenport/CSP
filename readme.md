@@ -1,0 +1,1 @@
+## This is a work in progress to build a CSP Header analyzing tool.
