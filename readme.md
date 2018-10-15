@@ -8,5 +8,5 @@
   * Build ability to search for a website based on input
   * Refactoring to clean up repetitive code
 
-![alt text](https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwjrluiLt4neAhUDVd8KHYERDFcQjRx6BAgBEAU&url=https%3A%2F%2Fscotthelme.co.uk%2Fhardening-your-http-response-headers%2F&psig=AOvVaw1cCMr8NqKq43X3kXWfDAtJ&ust=1539726693511797 "Logo Title Text 1")
-  
+![alt text][logo]
+[logo]: https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=2ahUKEwjrluiLt4neAhUDVd8KHYERDFcQjRx6BAgBEAU&url=https%3A%2F%2Fscotthelme.co.uk%2Fhardening-your-http-response-headers%2F&psig=AOvVaw1cCMr8NqKq43X3kXWfDAtJ&ust=1539726693511797 "CSP Header"
