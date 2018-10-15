@@ -4,10 +4,9 @@ import re
 
 def getAllLinks(soupURL, soupKey):
     if(soupURL):
-        if soupURL.startswith('http'):
-            homepage = re.sub(r'https?:\\', '', soupURL)
-        if soupURL.startswith('www.'):
-            homepage = re.sub(r'www.', '', soupURL)
+        if soupURL.startswith('http'): homepage = re.sub(r'https?:\\', '', soupURL)
+        if soupURL.startswith('www.'): homepage = re.sub(r'www.', '', soupURL)
+        if (homepage[len(homepage)-1] == "/"): homepage = homepage[:-1]
 
     page = requests.get(soupURL)
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -17,6 +16,7 @@ def getAllLinks(soupURL, soupKey):
     dictionary['internal'] = []
     dictionary['external'] = []
     dictionary['suspicious'] = []
+    dictionary['src_files'] = []
 
     links = []
 
@@ -34,6 +34,17 @@ def getAllLinks(soupURL, soupKey):
             else:
                 if (a['href'][0] != '.' and a['href'] != '#'):
                     dictionary['suspicious'].append(a['href'])
+    
+    for src in soup.find_all('a', src=True):
+        if(src['src'][0] == "/"):
+            dictionary['src_files'].append(homepage+ src['src'])
+        else:
+            dictionary['src_files'].append(src['src'])
+    for src in soup.find_all('img', src=True):
+        if(src['src'][0] == "/"):
+            dictionary['src_files'].append(homepage+ src['src'])
+        else:
+            dictionary['src_files'].append(src['src'])
 
     # internal page links
     count = 0;
