@@ -7,3 +7,4 @@
   * Ensure each list does not contain duplicate links
   * Build ability to search for a website based on input
   * Refactoring to clean up repetitive code
+  * Convert requests method to session based instead of request based to allow for larger link load
